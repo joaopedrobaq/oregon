@@ -25,5 +25,6 @@ time.sleep(0.5)
 pyautogui.write("P", 0.1)
 pyautogui.press("enter")
 
+time.sleep(0.5)
 pyautogui.moveTo(490,685)
 pyautogui.click()

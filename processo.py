@@ -31,9 +31,9 @@ pyautogui.click()
 
 time.sleep(5)
 
-pyautogui.moveTo(anotacoes)
-pyautogui.click()
-pyautogui.hotkey('ctrl', 'c')
+#pyautogui.moveTo(anotacoes)
+#pyautogui.click()
+#pyautogui.hotkey('ctrl', 'c')
 
 pyautogui.moveTo(primeiraLinha)
 for i in range(quantidade):
@@ -41,3 +41,5 @@ for i in range(quantidade):
   pyautogui.click()
   pyautogui.move(0, 25)
   time.sleep(0.2)
+
+pyautogui.scroll(-300)
