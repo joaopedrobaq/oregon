@@ -3,41 +3,14 @@ import time
 import pyautogui
 import keyboard
 import pyperclip
+from coords import coords
 
 #Editar o Valor de Acordo com o PC usado
-pc = 4
-
-if pc == 1:
-    #Coordenadas PC Estagiário
-    abrir = (310, 520)
-    busca = (846, 215)
-    primeiro = (430, 245)
-    parte = (460, 520)
-    novo = (310, 600)
-
-if pc == 2:
-    # Coordenadas PC Angela
-    abrir = (385, 490)
-    busca = (1000, 280)
-    primeiro = (650, 310)
-    parte = (540, 490)
-    novo = (300, 720)
-
-if pc == 3:
-    # Coordenadas PC Joao Porto
-    abrir = (310, 490)
-    busca = (1000, 280)
-    primeiro = (650, 310)
-    parte = (460, 490)
-    novo = (300, 720)
-
-if pc == 4:
-    # Coordenadas PC Bartira
-    abrir = (310, 490)
-    busca = (900, 215)
-    primeiro = (500, 240)
-    parte = (460, 490)
-    novo = (300, 600)
+# 0 = Estagiário
+# 1 = Angela
+# 2 = João Porto
+# 3 = Bartira
+pc = 0
 
 # String para extrair os nomes
 string = """
@@ -85,13 +58,13 @@ for i in range(inicio, len(nomes)):
     pyperclip.copy(nomes[i])
 
     # Clicar no ...
-    pyautogui.moveTo(abrir)
+    pyautogui.moveTo(coords[pc]['abrir'])
     pyautogui.click()
 
     time.sleep(2)
 
     # Clicar na busca
-    pyautogui.moveTo(busca)
+    pyautogui.moveTo(coords[pc]['busca'])
     pyautogui.click()
     pyautogui.hotkey('ctrl', 'v')
     pyautogui.press("enter")
@@ -99,13 +72,13 @@ for i in range(inicio, len(nomes)):
     time.sleep(4)
 
     # Pegar primeiro resultado
-    pyautogui.moveTo(primeiro)
+    pyautogui.moveTo(coords[pc]['primeiro'])
     pyautogui.click()
     pyautogui.click()
 
     # Colocar como Parte
     time.sleep(1)
-    pyautogui.moveTo(parte)
+    pyautogui.moveTo(coords[pc]['parte'])
     pyautogui.click()
     pyautogui.click()
     time.sleep(0.5)
@@ -125,7 +98,7 @@ for i in range(inicio, len(nomes)):
     pyautogui.scroll(-300)
 
     # Abrir mais um
-    pyautogui.moveTo(novo)
+    pyautogui.moveTo(coords[pc]['novo'])
     pyautogui.click()
     pyautogui.click()
 
