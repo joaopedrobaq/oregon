@@ -8,7 +8,8 @@ Scripts Python para inserção e manipulação de dados no sistema Oregon. Impor
 
 ## Dependências
 
-* Python
-* Git
-* pyautogui (pip)
-* keyboard (pip)
+- Python
+- Git
+- pyautogui (pip)
+- keyboard (pip)
+- PyQt5
