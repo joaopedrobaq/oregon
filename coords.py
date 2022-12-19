@@ -12,7 +12,11 @@ coords = [
         'abrirProcesso': (460, 185),
         'anotacoesProcesso': (1000, 350),
         'primeiraLinha': (500, 520),
-        'quantidadeLinhas': 3
+        'quantidadeLinhas': 3,
+        'cadastros': (40, 100),
+        'novaPessoa': (40, 140),
+        'nomePessoa': (400, 350),
+        'salvarPessoa': (490,685)
     },
     # 1 = PC Angela
     {
@@ -39,6 +43,16 @@ coords = [
         'busca': (900, 215),
         'primeiro': (500, 240),
         'parte': (460, 490),
-        'novo': (300, 600)
+        'novo': (300, 600),
+        'buscaProcesso': (180, 180),
+        'executarBusca': (190, 390),
+        'abrirProcesso': (460, 185),
+        'anotacoesProcesso': (1000, 350),
+        'primeiraLinha': (500, 520),
+        'quantidadeLinhas': 4,
+        'cadastros': (40, 100),
+        'novaPessoa': (40, 140),
+        'nomePessoa': (400, 350),
+        'salvarPessoa': (540, 685)
     }
 ]

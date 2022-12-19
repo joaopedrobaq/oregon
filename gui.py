@@ -4,10 +4,12 @@ import pyautogui
 import time
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QHBoxLayout, QInputDialog, QMessageBox
 from processo import selectProcesso
-from lista import tratarLista
+from lista import tratarLista, cadastrador
 
 app = QApplication(sys.argv)
 window = QWidget()
+
+pc = 3
 
 # Cria os botões
 button1 = QPushButton("Abrir Processo")
@@ -21,7 +23,7 @@ def abrir_processo():
     text, ok = QInputDialog.getText(window, "Caixa de texto", "Digite algo:")
     if ok:
         # Realizar ações com número do processo
-        selectProcesso(0, text)
+        selectProcesso(pc, text)
         print(f"Texto digitado: {text}")
 
 
@@ -37,12 +39,12 @@ def pegar_coordenadas():
     print(string)
     pyperclip.copy(string)
 
-    # msg_box = QMessageBox()
+    msg_box = QMessageBox()
 
-    # # Define o título e o texto do diálogo
-    # msg_box.setWindowTitle('Coordenadas')Texto padrão
-    # msg_box.setText(f'X: {x} Y: {y}')
-    # msg_box.exec_()
+    # Define o título e o texto do diálogo
+    msg_box.setWindowTitle('Coordenadas')
+    msg_box.setText(f'X: {x} Y: {y}')
+    msg_box.exec_()
 
 
 button2.clicked.connect(pegar_coordenadas)
@@ -51,12 +53,12 @@ button2.clicked.connect(pegar_coordenadas)
 def inserirLista():
     # Abre o diálogo de entrada e obtém o texto digitado pelo usuário
     text, ok = QInputDialog.getMultiLineText(None,
-                                             'Título',
-                                             'Mensagem:',
-                                             text='Texto padrão')
+                                             'Inserção de Lista',
+                                             'Lista de Nomes:')
 
     if ok:
         # Se o usuário clicar em "OK", exibe o texto digitado
+        global nomes
         nomes = tratarLista(text)
         print(nomes)
 
@@ -65,7 +67,7 @@ button3.clicked.connect(inserirLista)
 
 
 def cadastrarLista():
-    print(nomes)
+    cadastrador(pc, nomes)
 
 
 button4.clicked.connect(cadastrarLista)

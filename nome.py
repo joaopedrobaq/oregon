@@ -1,15 +1,18 @@
 import pyautogui
 import time
+from coords import coords
 
-pyautogui.moveTo(40, 100)
+pc = 3
+
+pyautogui.moveTo(coords[pc]['cadastros'])
 pyautogui.click()
 
 time.sleep(0.5)
-pyautogui.moveTo(40, 140)
+pyautogui.moveTo(coords[pc]['novaPessoa'])
 pyautogui.click()
 
 time.sleep(1)
-pyautogui.moveTo(400, 350)
+pyautogui.moveTo(coords[pc]['nomePessoa'])
 pyautogui.click()
 pyautogui.hotkey('ctrl', 'v')
 
@@ -26,5 +29,5 @@ pyautogui.write("P", 0.1)
 pyautogui.press("enter")
 
 time.sleep(0.5)
-pyautogui.moveTo(490,685)
+pyautogui.moveTo(coords[pc]['salvarPessoa'])
 pyautogui.click()
