@@ -16,7 +16,20 @@ coords = [
         'cadastros': (40, 100),
         'novaPessoa': (40, 140),
         'nomePessoa': (400, 350),
-        'salvarPessoa': (490, 685)
+        'salvarPessoa': (490, 685),
+        'pje': {
+            'busca': (980, 170),
+            'detalhes': (115, 415),
+            'inicial': (130, 420),
+            'frame': (700, 600)
+        },
+        'novoprocesso': {
+            'cadastroProcesso': (50, 160),
+            'numero': (200, 180),
+            'criar': (400, 680),
+            'novaParte': (230, 450),
+            'primeiraParte': (265, 420)            
+        }
     },
     # 1 = PC Angela
     {
