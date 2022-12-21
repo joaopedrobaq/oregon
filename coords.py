@@ -16,7 +16,7 @@ coords = [
         'cadastros': (40, 100),
         'novaPessoa': (40, 140),
         'nomePessoa': (400, 350),
-        'salvarPessoa': (490,685)
+        'salvarPessoa': (490, 685)
     },
     # 1 = PC Angela
     {
@@ -54,5 +54,14 @@ coords = [
         'novaPessoa': (40, 140),
         'nomePessoa': (400, 350),
         'salvarPessoa': (540, 685)
+    },
+    # 4 = PC João Pedro
+    {
+        'pje': {
+            'busca': (1600, 170),
+            'detalhes': (150, 415),
+            'inicial': (170, 420),
+            'frame': (900, 600)
+        }
     }
 ]
