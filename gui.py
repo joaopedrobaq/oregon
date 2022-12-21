@@ -12,22 +12,10 @@ window = QWidget()
 pc = 3
 
 # Cria os botões
-button1 = QPushButton("Abrir Processo")
-button2 = QPushButton("Pegar Coordenadas")
+button1 = QPushButton("Pegar Coordenadas")
+button2 = QPushButton("Abrir Processo")
 button3 = QPushButton("Inserir Lista")
 button4 = QPushButton("Cadastrar")
-
-
-# Função do Botão de Abrir Processo
-def abrir_processo():
-    text, ok = QInputDialog.getText(window, "Caixa de texto", "Digite algo:")
-    if ok:
-        # Realizar ações com número do processo
-        selectProcesso(pc, text)
-        print(f"Texto digitado: {text}")
-
-
-button1.clicked.connect(abrir_processo)
 
 
 # Função do Botão de Pegar Coordenadas
@@ -47,13 +35,24 @@ def pegar_coordenadas():
     msg_box.exec_()
 
 
-button2.clicked.connect(pegar_coordenadas)
+button1.clicked.connect(pegar_coordenadas)
+
+
+# Função do Botão de Abrir Processo
+def abrir_processo():
+    text, ok = QInputDialog.getText(window, "Caixa de texto", "Digite algo:")
+    if ok:
+        # Realizar ações com número do processo
+        selectProcesso(pc, text)
+        print(f"Texto digitado: {text}")
+
+
+button2.clicked.connect(abrir_processo)
 
 
 def inserirLista():
     # Abre o diálogo de entrada e obtém o texto digitado pelo usuário
-    text, ok = QInputDialog.getMultiLineText(None,
-                                             'Inserção de Lista',
+    text, ok = QInputDialog.getMultiLineText(None, 'Inserção de Lista',
                                              'Lista de Nomes:')
 
     if ok:
