@@ -2,12 +2,18 @@ import pyautogui
 import pyperclip
 import re
 import time
+import json
 from coords import coords
 
-pc = 0
+pc = 4
 
-processo = '0000732-35.2022.5.05.0037'
-pyperclip.copy(processo)
+match = re.search(r'\d{7}\-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}', pyperclip.paste())
+
+if match:
+    processo = pyperclip.paste()
+else:
+    processo = '0000726-76.2022.5.05.0021'
+    pyperclip.copy(processo)
 
 # parte de interação com tela
 
@@ -24,6 +30,7 @@ pyautogui.click()
 # Clicar na petição inicial
 time.sleep(10)
 pyautogui.moveTo(coords[pc]['pje']['inicial'])
+time.sleep(0.3)
 pyautogui.click()
 
 # Clicar no frame do arquivo
@@ -33,8 +40,11 @@ pyautogui.click()
 
 # Selecionar tudo e copiar
 pyautogui.keyDown("pagedown")
-time.sleep(5)
+time.sleep(2.5)
 pyautogui.keyUp("pagedown")
+pyautogui.keyDown("pageup")
+time.sleep(2.5)
+pyautogui.keyUp("pageup")
 pyautogui.hotkey('ctrl', 'a')
 time.sleep(1)
 pyautogui.hotkey('ctrl', 'c')
@@ -43,10 +53,23 @@ pyautogui.hotkey('ctrl', 'c')
 string = pyperclip.paste()
 
 # Pegar tipo de ação com processo de origem
-string = string.replace("\n", "")
-match = re.search(r'AÇÃO DE EXECUÇÃO AUTÔNOMA PROVISÓRIA, do Título Judicial decorrente do Processo nº \d{7}\.\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}', string)
-if match:
-    tipo = match.group()
-    print(tipo)
+string = string.replace("\n", "/")
+match = re.search(r'\d{7}\.\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}', string)
+tipo = match.group()
+print(tipo)
+
 # Pegar lista de nomes
-# montar string com ambos para anotações no oregon
+nomes = re.findall(r'\d{2}[ ]+([A-Z]+(?:[ ]+[A-Z]+)*)', string)
+print(nomes)
+
+# enviar dados ao json
+objeto = {"processo": processo, "origem": tipo, "nomes": nomes}
+
+with open('processos.json', 'r') as f:
+    # Adiciona os dados ao final do arquivo JSON
+    data = json.load(f)
+
+data.append(objeto)
+
+with open('processos.json', 'w') as f:
+    json.dump(data, f)
