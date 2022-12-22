@@ -1,6 +1,7 @@
 import pyautogui
 import time
 import pyperclip
+import json
 from coords import coords
 
 pc = 0
@@ -32,6 +33,22 @@ do Processo nº 0001164.33.2012.5.05.0028
 5919 MARIA DO CARMO SANTOS PIMENTEL 
 5920 MARIA DO PERPETUO SOCORRO V BARBOSA
 '''
+
+# Pegar do JSON
+with open('processos.json', 'r') as f:
+    data = json.load(f)
+
+i = 0
+
+processo = data[i]['processo']
+
+anotacoes = f'''AÇÃO DE EXECUÇÃO AUTÔNOMA PROVISÓRIA, do Título Judicial decorrente do Processo nº {data[i]['origem']} 
+'''
+n = 1
+for nome in data[i]['nomes']:
+  anotacoes += f'''
+{n}) {nome} '''
+  n += 1
 
 # CADASTROS 
 pyautogui.moveTo(coords[pc]['cadastros'])
@@ -125,17 +142,21 @@ pyautogui.click()
 time.sleep(0.5)
 pyautogui.press("tab")
 pyautogui.write("Parte")
-pyautogui.press("enter")
+#pyautogui.press("enter")
 pyautogui.press("tab")
 pyautogui.write("Autor")
-pyautogui.press("enter")
+# pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("space")
+pyautogui.press("tab")
 
 # PARTE BANCO - RÉU
-pyautogui.press("tab")
-pyautogui.press("enter")
+pyautogui.moveTo(coords[pc]['novoprocesso']['segundaParte'])
+pyautogui.click()
+time.sleep(1)
 pyautogui.moveTo(coords[pc]['busca'])
 pyautogui.click()
-pyautogui.write("Sindicato")
+pyautogui.write("Banco do Brasil")
 pyautogui.press("enter")
 
 time.sleep(4)
@@ -147,7 +168,9 @@ pyautogui.click()
 time.sleep(0.5)
 pyautogui.press("tab")
 pyautogui.write("Parte")
-pyautogui.press("enter")
+# pyautogui.press("enter")
 pyautogui.press("tab")
-pyautogui.write("Autor")
-pyautogui.press("enter")
+pyautogui.write("R´e")
+# pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("space")

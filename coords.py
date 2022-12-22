@@ -28,7 +28,8 @@ coords = [
             'numero': (200, 180),
             'criar': (400, 680),
             'novaParte': (230, 450),
-            'primeiraParte': (265, 420)            
+            'primeiraParte': (265, 420),
+            'segundaParte': (265, 450)            
         }
     },
     # 1 = PC Angela
