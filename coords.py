@@ -21,7 +21,8 @@ coords = [
             'busca': (980, 170),
             'detalhes': (115, 415),
             'inicial': (130, 420),
-            'frame': (700, 600)
+            'frame': (700, 600),
+            'apagarBusca': (300, 230)
         },
         'novoprocesso': {
             'cadastroProcesso': (50, 160),
@@ -29,7 +30,7 @@ coords = [
             'criar': (400, 680),
             'novaParte': (230, 450),
             'primeiraParte': (265, 420),
-            'segundaParte': (265, 450)            
+            'segundaParte': (265, 450)
         }
     },
     # 1 = PC Angela
@@ -74,8 +75,10 @@ coords = [
         'pje': {
             'busca': (1600, 170),
             'detalhes': (150, 415),
-            'inicial': (170, 420),
-            'frame': (900, 600)
+            'inicial': (180, 360),
+            'frame': (900, 600),
+            'apagarBusca': (300, 230),
+            "buscaFiltro": (100, 220)
         }
     }
 ]
