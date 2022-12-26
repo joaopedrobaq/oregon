@@ -5,9 +5,9 @@ import time
 import json
 from coords import coords
 
-pc = 4
+pc = 0
 
-processos = []
+processos = ["0000719-96.2022.5.05.0017"]
 
 print("Há os seguintes processos:")
 i = 1
@@ -19,6 +19,8 @@ print("Por qual você quer começar?")
 item_escolhido = int(input("Qual o próximo processo?")) - 1
 
 for i in range(item_escolhido, len(processos)):
+    processo = processos[item_escolhido + i]
+    pyperclip.copy(processo)
     # Clicar na Busca
     pyautogui.moveTo(coords[pc]['pje']['busca'])
     pyautogui.click()
@@ -44,12 +46,16 @@ for i in range(item_escolhido, len(processos)):
     pyautogui.click()
 
     # Selecionar tudo e copiar
-    pyautogui.keyDown("pagedown")
+    '''pyautogui.keyDown("pagedown")
     time.sleep(1.5)
     pyautogui.keyUp("pagedown")
     pyautogui.keyDown("pageup")
     time.sleep(1.5)
-    pyautogui.keyUp("pageup")
+    pyautogui.keyUp("pageup")'''
+
+    for p in range(0,10):
+        pyautogui.press("pagedown")
+        time.sleep(0.1)
     pyautogui.hotkey('ctrl', 'a')
     time.sleep(1)
     pyautogui.hotkey('ctrl', 'c')

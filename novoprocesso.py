@@ -38,8 +38,13 @@ do Processo nº 0001164.33.2012.5.05.0028
 with open('processos.json', 'r') as f:
     data = json.load(f)
 
-i = 0
+i = 1
+for item in data:
+  print(f'{i}) {item["processo"]}')
+  i += 1
 
+i = int(input("Qual processo você quer?")) - 1
+ 
 processo = data[i]['processo']
 
 anotacoes = f'''AÇÃO DE EXECUÇÃO AUTÔNOMA PROVISÓRIA, do Título Judicial decorrente do Processo nº {data[i]['origem']} 
@@ -141,7 +146,12 @@ pyautogui.click()
 pyautogui.click()
 time.sleep(0.5)
 pyautogui.press("tab")
-pyautogui.write("Parte")
+pyperclip.copy("Parte")
+pyautogui.hotkey('ctrl', 'v')
+pyautogui.press("tab")
+pyautogui.hotkey('shift', 'tab')
+pyperclip.copy("Parte")
+pyautogui.hotkey('ctrl', 'v')
 #pyautogui.press("enter")
 pyautogui.press("tab")
 pyautogui.write("Autor")
@@ -170,7 +180,8 @@ pyautogui.press("tab")
 pyautogui.write("Parte")
 # pyautogui.press("enter")
 pyautogui.press("tab")
-pyautogui.write("R´e")
+pyperclip.copy("Réu")
+pyautogui.hotkey('ctrl', 'v')
 # pyautogui.press("enter")
 pyautogui.press("tab")
 pyautogui.press("space")

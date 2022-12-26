@@ -20,9 +20,10 @@ coords = [
         'pje': {
             'busca': (980, 170),
             'detalhes': (115, 415),
-            'inicial': (130, 420),
+            'inicial': (130, 360),
             'frame': (700, 600),
-            'apagarBusca': (300, 230)
+            'apagarBusca': (265, 230),
+            'buscaFiltro': (100, 220)
         },
         'novoprocesso': {
             'cadastroProcesso': (50, 160),
