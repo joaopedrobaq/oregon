@@ -5,18 +5,17 @@ import time
 import json
 from coords import coords
 
-pc = 0
+pc = 4
 
-processos = ["0000719-96.2022.5.05.0017"]
+processos = ['0000727-40.2022.5.05.0028']
 
 print("Há os seguintes processos:")
 i = 1
 for item in processos:
     print(f"{i}) {item}")
     i += 1
-print("Por qual você quer começar?")
 
-item_escolhido = int(input("Qual o próximo processo?")) - 1
+item_escolhido = int(input("Por qual você quer começar? ")) - 1
 
 for i in range(item_escolhido, len(processos)):
     processo = processos[item_escolhido + i]
@@ -37,11 +36,11 @@ for i in range(item_escolhido, len(processos)):
     pyautogui.click()
     pyautogui.write("inicial")
     pyautogui.moveTo(coords[pc]['pje']['inicial'])
-    time.sleep(3)
+    time.sleep(4)
     pyautogui.click()
 
     # Clicar no frame do arquivo
-    time.sleep(3)
+    time.sleep(4)
     pyautogui.moveTo(coords[pc]['pje']['frame'])
     pyautogui.click()
 
@@ -53,7 +52,7 @@ for i in range(item_escolhido, len(processos)):
     time.sleep(1.5)
     pyautogui.keyUp("pageup")'''
 
-    for p in range(0,10):
+    for p in range(0, 10):
         pyautogui.press("pagedown")
         time.sleep(0.1)
     pyautogui.hotkey('ctrl', 'a')
