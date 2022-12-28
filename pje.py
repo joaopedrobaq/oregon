@@ -7,7 +7,7 @@ from coords import coords
 
 pc = 4
 
-processos = ['0000727-40.2022.5.05.0028']
+processos = ['0000713-74.2022.5.05.0022']
 
 print("Há os seguintes processos:")
 i = 1
@@ -34,7 +34,8 @@ for i in range(item_escolhido, len(processos)):
     time.sleep(5)
     pyautogui.moveTo(coords[pc]['pje']['buscaFiltro'])
     pyautogui.click()
-    pyautogui.write("inicial")
+    pyperclip.copy("Petição Inicial")
+    pyautogui.hotkey('ctrl', 'v')
     pyautogui.moveTo(coords[pc]['pje']['inicial'])
     time.sleep(4)
     pyautogui.click()
