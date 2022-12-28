@@ -8,6 +8,7 @@ string = ''
 
 time.sleep(2)
 
+pyautogui.press("pageup")
 for i in range (0, 15):
   pyautogui.hotkey('ctrl', 'c')
   # extrair apenas o numero do processo
@@ -19,7 +20,6 @@ for i in range (0, 15):
     print(f"{match.group()}")
   # seta para baixo e reinicio
   pyautogui.press('down')
-  time.sleep(1)
+  time.sleep(0.5)
 
 pyperclip.copy(string)
-#print(string)
