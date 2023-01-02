@@ -7,7 +7,7 @@ from coords import coords
 
 pc = 4
 
-processos = ['0000713-74.2022.5.05.0022']
+processos = []
 
 print("Há os seguintes processos:")
 i = 1

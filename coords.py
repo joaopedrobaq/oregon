@@ -74,12 +74,12 @@ coords = [
     # 4 = PC João Pedro
     {
         'pje': {
-            'busca': (1600, 170),
-            'detalhes': (150, 415),
-            'inicial': (180, 360),
-            'frame': (900, 600),
-            'apagarBusca': (300, 230),
-            "buscaFiltro": (100, 220)
+            'busca': (1600, 215),
+            'detalhes': (190, 515),
+            'inicial': (220, 450),
+            'frame': (1200, 600),
+            'apagarBusca': (380, 290),
+            "buscaFiltro": (140, 270)
         }
     }
 ]
