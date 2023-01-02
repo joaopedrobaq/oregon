@@ -5,7 +5,7 @@ import pyperclip
 with open('processos.json', 'r') as f:
     data = json.load(f)
 
-i = 39
+i = 0
 string = ""
 for item in data:
     string += f"\n\n{i} - {item['processo']}\n\n"
