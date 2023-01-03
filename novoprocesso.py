@@ -136,7 +136,7 @@ for x in range(i, i + 10):
     # PARTE BANCO - RÉU
     pyautogui.moveTo(coords[pc]['novoprocesso']['segundaParte'])
     pyautogui.click()
-    time.sleep(1)
+    time.sleep(2)
     pyautogui.moveTo(coords[pc]['busca'])
     pyautogui.click()
     pyautogui.write("Banco do Brasil")
@@ -158,3 +158,7 @@ for x in range(i, i + 10):
     # pyautogui.press("enter")
     pyautogui.press("tab")
     pyautogui.press("space")
+
+    # Salvar
+    pyautogui.moveTo(coords[pc]['novoprocesso']['salvar'])
+    pyautogui.click()
