@@ -9,37 +9,16 @@ from coords import coords
 # 1 = Angela
 # 2 = João Porto
 # 3 = Bartira
-pc = 3
+pc = 0
 
 # String para extrair os nomes
 string = """
-1) NILSON RODRIGUES SANTOS
-2) NILSON SOARES DE ALMEIDA
-3) NILTER CARLOS AZEVEDO DOS SANTOS
-4) NILTON AMORIM DE CARVALHO
-5) NILTON BONFIM LEAO
-6) NILTON CARLOS TEIXEIRA DE OLIVEIRA
-7) NILTON DA SILVA
-8) NILTON DA SILVA LIMA
-9) NILTON LEITE DE OLIVEIRA
-10) NILVA DE CARVALHO MALHEIROS
-11) NILVANIA COSTA SILVA
-12) NILZA CIRINEU TEIXEIRA
-13) NILZAN VIEIRA DO NASCIMENTO
-14) NILZETE AMORIM LOURA
-15) NILZETE MARIA BOMFIM
-16) NINA ROSA NEVES PORTELA
-17) NIUVAN PRADO PEREIRA
-18) NIVALDO ALMEIDA DE SOUZA JR
-19) NIVALDO COSTA LOBO
-20) NIVALDO DA SILVA CARNEIRO JRx
-
 
 """
 
 # Extrair os nomes e transformar em array
 # padrão antigo - nomes = re.findall(r"\d+\) (.*)", string)
-regex = r'\d+\s+(.+)'
+regex = r'\d+\) (.*)'
 nomes = re.findall(regex, string)
 nomes = [nome.strip() for nome in nomes]
 
